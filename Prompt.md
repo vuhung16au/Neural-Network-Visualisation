@@ -206,21 +206,25 @@ Add text "FCNN" (link to FCNN.html) to the nav bar in the pages
 - about.html
 - howto.html
 
-# Update the CSS files
+# Refactor/Move the CSS files
 
-create a new folder `styles` and move all the CSS files to this folder
-
-refactor the CSS files to use the new Bootstrap 5.3.6 and Font Awesome 6.7.2
-refactor the CSS code by seperating the CSS code from the HTML code
+Refactor *ALL* the CSS files to use the new Bootstrap 5.3.6 and Font Awesome 6.7.2
+Refactor the CSS code by separating the CSS code from the HTML code
 - Move all the CSS code to the CSS files
 - Remove all the CSS code from the HTML files (but include the CSS files in the HTML files)
+- Move the CSS files to a new folder called `css` in the root directory. Make sure to include the CSS files in the HTML files and refer to them correctly.
 
-# Update the JS files
+Help me decide the filenames and file structure.
 
-create a new folder `js` and move all the JS files to this folder
-refactor the JS code by seperating the JS code from the HTML code
+
+# Refactor/Move the JS files
+
+Refactor *ALL* the JS code in this project by separating the JS code from the HTML code
 - Move all the JS code to the JS files
 - Remove all the JS code from the HTML files (but include the JS files in the HTML files)
+- Move the JS files to a new folder called `js` in the root directory. Make sure to include the JS files in the HTML files and refer to them correctly.
+
+Help me decide the filenames and file structure.
 
 # Upgrade jQuery
 

@@ -139,21 +139,6 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Responsive box heights
-        function setEqualHeights() {
-            const boxes = document.querySelectorAll('.algo-box');
-            let maxHeight = 0;
-            boxes.forEach(box => {
-                box.style.height = 'auto';
-                if (box.offsetHeight > maxHeight) maxHeight = box.offsetHeight;
-            });
-            boxes.forEach(box => {
-                box.style.height = maxHeight + 'px';
-            });
-        }
-        window.addEventListener('load', setEqualHeights);
-        window.addEventListener('resize', setEqualHeights);
-    </script>
+    <script src="js/index.page.js"></script>
 </body>
 </html>
