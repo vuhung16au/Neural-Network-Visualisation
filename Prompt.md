@@ -174,3 +174,50 @@ each box has a different color
 in each box, describe the algorithm in 1-2 lines
 
 Make sure the boxes are responsive
+- Use Bootstrap 5.3.6 to create the boxes
+- Use Font Awesome 6.7.2 to create the icons
+- Use CSS to style the boxes
+- Use JavaScript to make the boxes responsive
+- Use MathJax to display the math formulas
+- Use the same style as the current `index.html` file
+- Use the same color scheme as the current `index.html` file
+- Use the same font as the current `index.html` file
+- Use the same layout as the current `index.html` file
+
+# Apply new versions 
+
+Use Bootstrap 5.3.6
+Use Font Awesome 6.7.2
+
+for all the pages
+- index.html
+- LeNet.html
+- AlexNet.html
+- FCNN.html
+- about.html
+- howto.html
+
+# Add FCNN to nav bar
+
+Add text "FCNN" (link to FCNN.html) to the nav bar in the pages
+- FCNN.html
+- LeNet.html
+- AlexNet.html
+- about.html
+- howto.html
+
+# Update the CSS files
+
+create a new folder `styles` and move all the CSS files to this folder
+
+refactor the CSS files to use the new Bootstrap 5.3.6 and Font Awesome 6.7.2
+refactor the CSS code by seperating the CSS code from the HTML code
+- Move all the CSS code to the CSS files
+- Remove all the CSS code from the HTML files (but include the CSS files in the HTML files)
+
+# Update the JS files
+
+create a new folder `js` and move all the JS files to this folder
+refactor the JS code by seperating the JS code from the HTML code
+- Move all the JS code to the JS files
+- Remove all the JS code from the HTML files (but include the JS files in the HTML files)
