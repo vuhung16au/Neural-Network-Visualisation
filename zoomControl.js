@@ -54,25 +54,29 @@ const ZoomControl = () => {
         
         const zoomInBtn = document.createElement('button');
         zoomInBtn.className = 'zoom-btn zoom-in';
-        zoomInBtn.textContent = '+';
+        zoomInBtn.innerHTML = '<i class="fa fa-search-plus"></i>';
         zoomInBtn.title = 'Zoom in';
+        zoomInBtn.setAttribute('aria-label', 'Zoom in');
         zoomInBtn.addEventListener('click', zoomIn);
-        
-        const zoomOutBtn = document.createElement('button');
-        zoomOutBtn.className = 'zoom-btn zoom-out';
-        zoomOutBtn.textContent = '−';
-        zoomOutBtn.title = 'Zoom out';
-        zoomOutBtn.addEventListener('click', zoomOut);
         
         const resetBtn = document.createElement('button');
         resetBtn.className = 'zoom-btn zoom-reset';
         resetBtn.textContent = 'Reset';
         resetBtn.title = 'Reset zoom';
+        resetBtn.setAttribute('aria-label', 'Reset zoom');
         resetBtn.addEventListener('click', resetZoom);
         
-        controls.appendChild(zoomOutBtn);
-        controls.appendChild(resetBtn);
+        const zoomOutBtn = document.createElement('button');
+        zoomOutBtn.className = 'zoom-btn zoom-out';
+        zoomOutBtn.innerHTML = '<i class="fa fa-search-minus"></i>';
+        zoomOutBtn.title = 'Zoom out';
+        zoomOutBtn.setAttribute('aria-label', 'Zoom out');
+        zoomOutBtn.addEventListener('click', zoomOut);
+        
+        // Changed order to match visual top-to-bottom layout
         controls.appendChild(zoomInBtn);
+        controls.appendChild(resetBtn);
+        controls.appendChild(zoomOutBtn);
         
         document.body.appendChild(controls);
     };
@@ -85,6 +89,15 @@ const ZoomControl = () => {
             container.style.transform = `scale(${currentZoom})`;
             container.style.transformOrigin = 'center center';
             container.style.transition = 'transform 0.3s ease-out';
+            
+            // Update zoom level indicator if visible
+            const zoomControls = document.querySelector('.zoom-controls');
+            if (zoomControls) {
+                const resetBtn = zoomControls.querySelector('.zoom-reset');
+                if (resetBtn) {
+                    resetBtn.textContent = `${Math.round(currentZoom * 100)}%`;
+                }
+            }
         }
     };
     

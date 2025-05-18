@@ -1,58 +1,142 @@
 .zoom-controls {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    padding: 5px;
-    z-index: 1000;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    padding: 8px 6px;
+    z-index: 1050; /* Higher z-index to ensure it's above other elements */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 8px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    animation: fadeInRight 0.5s ease-out forwards;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateY(-50%) translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
 }
 
 .zoom-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     border: none;
     background-color: var(--primary, #4361ee);
     color: white;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 300;
     cursor: pointer;
-    transition: all 0.2s ease;
-    border-radius: 4px;
-    margin: 0 2px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 50%;
+    margin: 0;
+    box-shadow: 0 2px 6px rgba(67, 97, 238, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.zoom-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease-out;
+    pointer-events: none;
 }
 
 .zoom-btn:hover {
     background-color: var(--primary-light, #4895ef);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 10px rgba(67, 97, 238, 0.4);
+}
+
+.zoom-btn:hover::after {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
 }
 
 .zoom-btn:focus {
     outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.3);
 }
 
 .zoom-btn:active {
     transform: scale(0.95);
+    background-color: var(--secondary, #3a0ca3);
+}
+
+.zoom-btn:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+    transition: 0s;
 }
 
 .zoom-reset {
-    font-size: 14px;
-    min-width: 60px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-radius: 22px;
+    background-color: var(--secondary, #3a0ca3);
+}
+
+.zoom-reset:hover {
+    background-color: var(--secondary, #3a0ca3);
+}
+
+.zoom-in i, .zoom-out i {
+    font-size: 18px;
 }
 
 /* For small mobile devices */
 @media (max-width: 576px) {
     .zoom-controls {
-        bottom: 60px;
+        top: auto;
+        right: 20px;
+        bottom: 70px;
+        transform: none;
+        flex-direction: row;
+        animation: fadeInUp 0.5s ease-out forwards;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     
     .zoom-btn {
-        width: 30px;
-        height: 30px;
+        width: 38px;
+        height: 38px;
         font-size: 16px;
+        margin: 0 3px;
+    }
+    
+    .zoom-reset {
+        width: auto;
+        padding: 0 12px;
+        font-size: 10px;
     }
 }
