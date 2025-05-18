@@ -15,32 +15,240 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- MathJax for mathematical formulas -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style type="text/css">
-        * { font-weight: 100; }
-        h1 { font-weight: 100; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        * { font-weight: 300; }
+        h1, h2, h3 { 
+            font-weight: 300;
+            color: #2c3e50;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        .algorithm-card {
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .algorithm-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        .math-block {
+            overflow-x: auto;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-left: 3px solid #007bff;
+        }
+        .nav-link {
+            margin: 0 10px;
+            color: #007bff;
+            font-weight: 400;
+        }
+        .footer {
+            margin-top: 3rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid #e9ecef;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .container {
+                padding: 0 15px;
+            }
+        }
     </style>
-    <title>NN-Visuals</title>
+    <title>NN-Visuals: Neural Network Visualisation</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">NN-Visuals</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="about.html">About <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/vuhung16au/Neural-Network-Visualisation">GitHub</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 offset-sm-3 text-center" style="margin-top: 2rem;">
+            <div class="col-lg-10 offset-lg-1 text-center" style="margin-top: 2rem;">
                 <div>
+                    <h1>Neural Network Visualisation</h1>
+                    <p class="lead">An interactive tool for visualizing and understanding neural network architectures</p>
+                    <hr>
+                    
+                    <div class="text-left">
+                        <h2>What This Application Does</h2>
+                        <p>NN-Visuals is an open-source web application designed to help researchers, students, and practitioners visualize and understand neural network architectures. It provides interactive 3D visualizations of various neural network models, allowing users to:</p>
+                        
+                        <ul>
+                            <li>Explore the structure and components of different neural network architectures</li>
+                            <li>Understand the connections and data flow between layers</li>
+                            <li>Visualize how different architectures process information</li>
+                            <li>Compare architectural differences between popular neural network models</li>
+                            <li>Save and export visualizations for educational or research purposes</li>
+                        </ul>
+                        
+                        <p>The tool aims to bridge the gap between theoretical understanding and practical implementation of neural networks by providing intuitive visualizations.</p>
 
-                    <h1>NN-Visuals</h1>
-                    <br>
-                    <p>This tool was built to save people time. <br> Hopefully it accomplishes that goal.</p>
-
-                    <p>Time was saved <i>building</i> this tool with the help of <br> <a href="https://github.com/d3/d3">d3</a>, <a href="https://github.com/mrdoob/three.js/">three.js</a>, <a href="https://github.com/twbs/bootstrap">bootstrap</a>, <a href="https://github.com/jquery/jquery">jquery</a>, and <a href="https://github.com/FortAwesome/Font-Awesome">font-awesome</a>.</p>
-
-                    <p>If there are additional features you'd like to see, <br>feel free to open an issue on <a href="https://github.com/vuhung16au/Neural-Network-Visualisation/issues">github</a>.<br>PRs welcome too.</p>
-
-                    <a href="index.html">home</a>
+                        <h2>Available Neural Network Architectures</h2>
+                        <div class="row">
+                            <!-- CNN Card -->
+                            <div class="col-md-6">
+                                <div class="algorithm-card">
+                                    <h3>Convolutional Neural Networks (CNN)</h3>
+                                    <p>Specialized deep neural networks designed for processing structured grid data such as images.</p>
+                                    <div class="math-block">
+                                        <p>Convolution operation:</p>
+                                        <p>\[ (f * g)(x) = \sum_{i=-\infty}^{\infty} f(i) \cdot g(x-i) \]</p>
+                                        <p>For a 2D image convolution with kernel \(K\):</p>
+                                        <p>\[ (I * K)(i,j) = \sum_{m} \sum_{n} I(i-m, j-n) K(m,n) \]</p>
+                                    </div>
+                                    <a href="https://github.com/vuhung16au/Neural-Network-Visualisation/blob/master/CNN.md" class="btn btn-primary" target="_blank">Learn More</a>
+                                </div>
+                            </div>
+                            
+                            <!-- FCNN Card -->
+                            <div class="col-md-6">
+                                <div class="algorithm-card">
+                                    <h3>Fully Connected Neural Networks (FCNN)</h3>
+                                    <p>Traditional neural networks where each neuron is connected to every neuron in adjacent layers.</p>
+                                    <div class="math-block">
+                                        <p>For each neuron:</p>
+                                        <p>\[ y = \sigma\left(\sum_{i=1}^{n} w_i x_i + b\right) \]</p>
+                                        <p>Where:</p>
+                                        <p>\(\sigma\) is the activation function, \(w_i\) are weights, \(x_i\) are inputs, and \(b\) is bias</p>
+                                    </div>
+                                    <a href="https://github.com/vuhung16au/Neural-Network-Visualisation/blob/master/FCNN.md" class="btn btn-primary" target="_blank">Learn More</a>
+                                </div>
+                            </div>
+                            
+                            <!-- AlexNet Card -->
+                            <div class="col-md-6">
+                                <div class="algorithm-card">
+                                    <h3>AlexNet</h3>
+                                    <p>A pioneering deep CNN architecture that won the 2012 ImageNet competition and revolutionized computer vision.</p>
+                                    <div class="math-block">
+                                        <p>Architecture consists of:</p>
+                                        <p>- 5 convolutional layers</p>
+                                        <p>- 3 fully connected layers</p>
+                                        <p>- ReLU activation: \[ f(x) = \max(0, x) \]</p>
+                                        <p>- Local response normalization (LRN)</p>
+                                    </div>
+                                    <a href="https://github.com/vuhung16au/Neural-Network-Visualisation/blob/master/AlexNet.md" class="btn btn-primary" target="_blank">Learn More</a>
+                                </div>
+                            </div>
+                            
+                            <!-- LeNet Card -->
+                            <div class="col-md-6">
+                                <div class="algorithm-card">
+                                    <h3>LeNet-5</h3>
+                                    <p>One of the earliest CNNs developed by Yann LeCun, designed for handwritten and machine-printed character recognition.</p>
+                                    <div class="math-block">
+                                        <p>Architecture consists of:</p>
+                                        <p>- 2 convolutional layers</p>
+                                        <p>- 2 subsampling (pooling) layers</p>
+                                        <p>- 3 fully connected layers</p>
+                                        <p>- Tanh activation: \[ \tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} \]</p>
+                                    </div>
+                                    <a href="https://github.com/vuhung16au/Neural-Network-Visualisation/blob/master/LeNet.md" class="btn btn-primary" target="_blank">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h2>Technologies Used</h2>
+                        <p>This visualization tool was built with the following technologies:</p>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="fas fa-project-diagram"></i> D3.js</h5>
+                                        <p class="card-text">For data-driven document manipulation</p>
+                                        <a href="https://github.com/d3/d3" class="btn btn-sm btn-outline-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="fas fa-cube"></i> Three.js</h5>
+                                        <p class="card-text">For 3D visualization</p>
+                                        <a href="https://github.com/mrdoob/three.js/" class="btn btn-sm btn-outline-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card text-center">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><i class="fas fa-palette"></i> Bootstrap</h5>
+                                        <p class="card-text">For responsive design</p>
+                                        <a href="https://github.com/twbs/bootstrap" class="btn btn-sm btn-outline-primary">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer">
+                    <p>If there are additional features you'd like to see, feel free to open an issue on <a href="https://github.com/vuhung16au/Neural-Network-Visualisation/issues">GitHub</a>. PRs welcome too.</p>
+                    <a href="index.html" class="btn btn-outline-secondary">Back to Home</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- JavaScript dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <a href="https://github.com/vuhung16au/Neural-Network-Visualisation" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 </body>
