@@ -38,3 +38,38 @@ https://github.com/vuhung16au/Neural-Network-Visualisation/blob/master/LeNet.md
 5. Use mathjax lib to display maths formulas
 
 # Create docker compose yml 
+
+# Refactor the app.
+
+Put all css to files under folder styles
+
+You can help me decide the filenames and file structure.
+
+# Add an option to show/hide the "NN-Visuals" setting box on the left hand side of the script?
+
+Implement the Toggle Button for NN-Visuals Settings Box for the 3 pages:
+
+http://localhost:3000/index.html
+http://localhost:3000/LeNet.html
+http://localhost:3000/AlexNet.html
+
+# Upgrade to Bootstrap 5.3.6
+
+# Upgrade to Font Awesome 6.7.2
+
+# Add a page `howto.html` to show how to use the app
+
+- How to use the app
+- How to export the image
+- How to use the app
+- How to zoom in/out
+- How to show/hide the NN-Visuals setting box
+- How to change the color of the NN-Visuals setting box
+- How to switch between the 3 styles
+- How to change the size of the NN-Visuals setting box
+- How to change the size of the NN-Visuals setting box
+
+And link to this page from the `index.html`, `LeNet.html`, `AlexNet.html` pages.
+- Add a link to the `howto.html` page in the `index.html`, `LeNet.html`, `AlexNet.html` pages
+- Add a link to the `howto.html` page in the `about.html` page
+- Add a link to the `howto.html` page in the `about.html` page
