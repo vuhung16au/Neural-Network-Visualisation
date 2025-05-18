@@ -6,3 +6,121 @@ h2 {
     border-bottom: 1px solid #eee;
     padding-bottom: 0.5rem;
 }
+
+/* Enhance algorithm cards */
+.algorithm-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    margin-bottom: 2rem;
+    transition: box-shadow 0.2s;
+}
+.algorithm-card:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+}
+
+/* Math block styling */
+.math-block {
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+/* Technology cards */
+.card.text-center {
+    border-radius: 1rem;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    margin-bottom: 1rem;
+}
+.card-title i {
+    margin-right: 0.5rem;
+    color: #0d6efd;
+}
+
+/* Footer styling */
+.footer {
+    margin-top: 3rem;
+    padding: 1.5rem 0 0.5rem 0;
+    border-top: 1px solid #e9ecef;
+    color: #6c757d;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+    .algorithm-card {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+    }
+    .footer {
+        font-size: 0.95rem;
+    }
+}
+
+/* Navbar brand bold */
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Section headings */
+h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+/* Lead paragraph */
+.lead {
+    color: #495057;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* How To page specific styles */
+.howto-section {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+.howto-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    margin-bottom: 2rem;
+    transition: box-shadow 0.2s;
+}
+.howto-card:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+}
+.howto-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #0d6efd;
+}
+.howto-step {
+    margin-bottom: 1.2rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+.howto-step:before {
+    content: '\2022';
+    color: #0d6efd;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+@media (max-width: 767px) {
+    .howto-card {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+    }
+    .howto-title {
+        font-size: 1.2rem;
+    }
+}
