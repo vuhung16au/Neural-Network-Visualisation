@@ -221,3 +221,7 @@ create a new folder `js` and move all the JS files to this folder
 refactor the JS code by seperating the JS code from the HTML code
 - Move all the JS code to the JS files
 - Remove all the JS code from the HTML files (but include the JS files in the HTML files)
+
+# Upgrade jQuery
+
+Upgrade jQuery to the latest version (3.7.1) in all the pages
