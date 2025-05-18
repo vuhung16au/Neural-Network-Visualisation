@@ -208,8 +208,8 @@ Add text "FCNN" (link to FCNN.html) to the nav bar in the pages
 
 # Refactor/Move the CSS files
 
-Refactor *ALL* the CSS files to use the new Bootstrap 5.3.6 and Font Awesome 6.7.2
-Refactor the CSS code by separating the CSS code from the HTML code
+
+Refactor *ALL* the CSS code by separating the CSS code from the HTML code
 - Move all the CSS code to the CSS files
 - Remove all the CSS code from the HTML files (but include the CSS files in the HTML files)
 - Move the CSS files to a new folder called `css` in the root directory. Make sure to include the CSS files in the HTML files and refer to them correctly.

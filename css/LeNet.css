@@ -1,0 +1,9 @@
+/* LeNet.css: Styles specific to LeNet.html */
+#graph-container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background-color: white;
+}

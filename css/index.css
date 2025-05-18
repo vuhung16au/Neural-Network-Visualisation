@@ -1,0 +1,35 @@
+/* index.css: Styles specific to index.html (landing page) */
+.main-title {
+  font-weight: 300;
+  color: var(--dark);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.algo-box {
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  color: #fff;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.algo-box:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+}
+.algo-fcnn {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+}
+.algo-lenet {
+  background: linear-gradient(135deg, var(--secondary), #7209b7);
+}
+.algo-alexnet {
+  background: linear-gradient(135deg, var(--warning), var(--danger));
+}
