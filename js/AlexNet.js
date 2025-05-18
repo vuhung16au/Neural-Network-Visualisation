@@ -1,4 +1,3 @@
-
 function AlexNet() {
 
     // /////////////////////////////////////////////////////////////////////////////
@@ -255,7 +254,7 @@ function AlexNet() {
     function makeTextSprite(should_make_geometry, message, copy_pos, sub_pos, opts) {
         if (should_make_geometry) {
             const loader = new THREE.FontLoader();
-            loader.load('fonts/helvetiker_regular.typeface.json', function (font) {
+            loader.load('fonts/Roboto_Regular.typeface.json', function (font) {
                 let geometry = new THREE.TextGeometry(message, {
                     font: font,
                     size: 3 * fontScale,
