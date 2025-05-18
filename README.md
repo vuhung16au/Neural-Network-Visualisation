@@ -4,8 +4,6 @@ Creating illustrations of Neural Network architectures is traditionally a time-c
 
 NN-Visuals is an advanced tool for generating Neural Network (NN) architecture visualizations parametrically through an intuitive interface. It allows researchers to quickly export high-quality diagrams as both Scalable Vector Graphics (SVG) for vector-based publication needs and PNG images for presentations and digital sharing.
 
-The application supports three distinct visualization styles: classic Fully-Connected Neural Networks (FCNN), Convolutional Neural Network (CNN) visualizations in the style of [the LeNet paper](http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf), and modern Deep Neural Network representations following [the AlexNet paper](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf). The FCNN and CNN visualizations leverage the [D3 javascript library](https://d3js.org/) for responsive, data-driven graphics, while the AlexNet-style visualizations use [Three.js](https://threejs.org/) for advanced 3D rendering. Every aspect of these visualizations can be extensively customized through a comprehensive set of controls for size, color, layout, and design parameters.
-
 ## Features
 
 - **Interactive Visualization Engine**: Create complex neural network architecture visualizations through a parameter-driven interface
@@ -48,5 +46,5 @@ This will start the server with hot-reloading enabled.
 - Reorganized controls into logical groupings for better usability
 - Enhanced form control styling (checkboxes, radio buttons, range sliders)
 - Added 404 page, improved server console output, and SEO enhancements
-
-For complete details on UI improvements, see [UI_IMPROVEMENTS.md](./UI_IMPROVEMENTS.md)
+- Added a new "How to Use" page with detailed instructions and tips
+- Added a new "About" page with information about the project and its creator
