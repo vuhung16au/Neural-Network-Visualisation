@@ -1,0 +1,298 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>How to Use NN-Visuals - Neural Network Visualization Tool</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style type="text/css">
+        :root {
+          --primary: #4361ee;
+          --primary-light: #4895ef;
+          --secondary: #3a0ca3;
+          --light: #f8f9fa;
+          --dark: #212529;
+          --gray: #adb5bd;
+          --success: #38b000;
+          --warning: #ffba08;
+          --danger: #d00000;
+        }
+        
+        * { font-weight: 100; }
+        
+        body {
+          background-color: #f8f9fa;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          color: var(--dark);
+        }
+        
+        h1 { 
+            font-weight: 300;
+            color: var(--dark);
+        }
+        
+        h2 {
+            font-weight: 300;
+            color: var(--primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        h4 {
+            color: var(--dark);
+            font-weight: 300;
+            margin-top: 0.5rem;
+        }
+        
+        .navbar {
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          background-color: white !important;
+          padding: 0.7rem 1rem;
+        }
+        
+        .navbar-brand {
+          font-weight: 400;
+          color: var(--primary) !important;
+          font-size: 1.5rem;
+        }
+        
+        .nav-link {
+          font-weight: 300;
+          color: var(--dark) !important;
+          margin: 0 0.5rem;
+        }
+        
+        .nav-item.active .nav-link {
+          color: var(--primary) !important;
+          font-weight: 400;
+        }
+        
+        .card {
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          border: none;
+          border-radius: 8px;
+          margin-bottom: 2rem;
+        }
+
+        .card-header {
+          background-color: white;
+          border-bottom: 1px solid #eee;
+          padding: 1.5rem 1.5rem 0.5rem;
+        }
+        
+        .card-body {
+          padding: 1.5rem;
+        }
+        
+        .img-help {
+          border: 1px solid var(--gray);
+          border-radius: 8px;
+          margin: 1rem 0;
+          max-width: 100%;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        kbd {
+          background-color: var(--dark);
+          color: white;
+          padding: 3px 5px;
+          border-radius: 3px;
+          font-family: monospace;
+          font-size: 90%;
+        }
+        
+        .tip {
+          background-color: rgba(67, 97, 238, 0.1);
+          border-left: 4px solid var(--primary);
+          padding: 1rem;
+          margin: 1rem 0;
+          border-radius: 0 4px 4px 0;
+        }
+        
+        .feature-list {
+          list-style-type: none;
+          padding-left: 0;
+        }
+        
+        .feature-list li {
+          padding: 0.5rem 0;
+          display: flex;
+          align-items: flex-start;
+        }
+        
+        .feature-list i {
+          color: var(--primary);
+          margin-right: 0.75rem;
+          font-size: 1.25rem;
+          margin-top: 0.2rem;
+        }
+        
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 2rem;
+          }
+          
+          h2 {
+            font-size: 1.5rem;
+          }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">NN-Visuals</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="LeNet.html">LeNet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AlexNet.html">AlexNet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="howto.html">How To <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/vuhung16au/Neural-Network-Visualisation">GitHub</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1" style="margin-top: 2rem; margin-bottom: 2rem;">
+                <h1 class="text-center mb-4">How to Use NN-Visuals</h1>
+                <p class="lead text-center mb-5">A comprehensive guide to getting the most out of the Neural Network Visualization tool</p>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h2 id="basic-usage">Basic Usage</h2>
+                        <p>NN-Visuals is an interactive tool for visualizing neural network architectures. This guide will help you understand how to use all the features of the application.</p>
+
+                        <ul class="feature-list">
+                            <li><i class="fa fa-check-circle"></i><strong>Visualize Different Networks:</strong> Choose from different pre-designed network architectures including FCNN, LeNet, and AlexNet.</li>
+                            <li><i class="fa fa-check-circle"></i><strong>Customize Appearance:</strong> Adjust colors, sizes, and display properties of the neural network components.</li>
+                            <li><i class="fa fa-check-circle"></i><strong>Interactive Exploration:</strong> Zoom, pan, and navigate through the network visualization.</li>
+                            <li><i class="fa fa-check-circle"></i><strong>Export Options:</strong> Save your visualizations as PNG images for presentations or publications.</li>
+                        </ul>
+
+                        <h2 id="navigation">Navigating the Visualization</h2>
+                        <h4>How to Zoom In/Out</h4>
+                        <p>You can zoom in and out of the neural network visualization using several methods:</p>
+                        <ul>
+                            <li><strong>Mouse Scroll Wheel:</strong> Scroll up to zoom in and down to zoom out</li>
+                            <li><strong>Trackpad Gestures:</strong> Pinch to zoom in and out (on supported devices)</li>
+                            <li><strong>Keyboard:</strong> Use <kbd>+</kbd> to zoom in and <kbd>-</kbd> to zoom out</li>
+                        </ul>
+                        
+                        <div class="tip">
+                            <strong>Tip:</strong> Double-click on a specific part of the visualization to zoom in on that area.
+                        </div>
+                        
+                        <h4>Panning and Moving Around</h4>
+                        <p>To move around the visualization:</p>
+                        <ul>
+                            <li><strong>Click and Drag:</strong> Click and hold your mouse button while moving to pan the view</li>
+                            <li><strong>Trackpad:</strong> Use two finger drag gestures to pan the view</li>
+                        </ul>
+                        
+                        <h2 id="settings-box">NN-Visuals Settings Box</h2>
+                        <h4>How to Show/Hide the NN-Visuals Setting Box</h4>
+                        <p>The settings box allows you to customize the visualization. To toggle its visibility:</p>
+                        <ul>
+                            <li>Click the <strong>gear icon</strong> <i class="fa fa-cog"></i> button located at the top-right corner of the screen</li>
+                            <li>The settings panel will slide in from the left side when shown, and slide out when hidden</li>
+                        </ul>
+
+                        <h4>How to Change the Size of the NN-Visuals Setting Box</h4>
+                        <p>The settings box has a fixed width on desktop screens, but will automatically adjust on smaller devices. On mobile devices, the settings panel will expand to full width when displayed.</p>
+                        
+                        <h4>How to Change the Color of the NN-Visuals Setting Box</h4>
+                        <p>The application follows a consistent color scheme using CSS variables. You can adjust colors through the settings panel options, which will affect both the visualization and the UI components.</p>
+                        <p>In the settings box, you can customize:</p>
+                        <ul>
+                            <li>Node colors and sizes</li>
+                            <li>Connection colors and widths</li>
+                            <li>Background colors</li>
+                            <li>Text labels and styling</li>
+                        </ul>
+                        
+                        <h2 id="styles">Working with Styles</h2>
+                        <h4>How to Switch Between the 3 Styles</h4>
+                        <p>NN-Visuals offers three different visualization styles:</p>
+                        <ul>
+                            <li><strong>Default Style:</strong> The standard representation with balanced colors and sizing</li>
+                            <li><strong>Publication Style:</strong> Clean, minimalist design optimized for academic papers and publications</li>
+                            <li><strong>Presentation Style:</strong> Bold, colorful design with enhanced labels for presentations and teaching</li>
+                        </ul>
+                        
+                        <p>To switch between styles:</p>
+                        <ol>
+                            <li>Open the settings panel by clicking the gear icon</li>
+                            <li>Locate the "Style" section in the settings panel</li>
+                            <li>Click on one of the three style options to apply it immediately</li>
+                        </ol>
+                        
+                        <h2 id="export">Exporting Visualizations</h2>
+                        <h4>How to Export the Image</h4>
+                        <p>To export your visualization as a PNG image:</p>
+                        <ol>
+                            <li>Adjust the visualization to your preferred view and settings</li>
+                            <li>Click the "Export" or "Download" button in the settings panel</li>
+                            <li>Choose "Export as PNG" from the options</li>
+                            <li>Wait for the export process to complete (you'll see a loading indicator)</li>
+                            <li>Your browser will automatically download the PNG file</li>
+                        </ol>
+                        
+                        <div class="tip">
+                            <strong>Note:</strong> For best results, position the visualization exactly as you want it to appear before exporting. The exported image will capture the current view exactly as it appears on screen.
+                        </div>
+                        
+                        <p>The PNG export uses server-side rendering to ensure high-quality images suitable for publications and presentations. If you encounter any issues with the server-side export, the application will automatically fall back to client-side export.</p>
+                        
+                        <h2 id="troubleshooting">Troubleshooting</h2>
+                        <p>If you encounter any issues:</p>
+                        <ul>
+                            <li><strong>Visualization not loading:</strong> Try refreshing the page or checking your internet connection</li>
+                            <li><strong>Export not working:</strong> Make sure the server is running properly if using server-side export</li>
+                            <li><strong>UI elements overlapping:</strong> Try a different browser or adjust your window size</li>
+                        </ul>
+                        
+                        <p>For more detailed information about the application, visit the <a href="about.html">About page</a> or check out the project on <a href="https://github.com/vuhung16au/Neural-Network-Visualisation">GitHub</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light py-4 mt-4">
+        <div class="container text-center">
+            <p class="mb-0">NN-Visuals - Neural Network Visualization Tool</p>
+            <p class="mb-0 text-muted">An open source project for visualizing neural network architectures</p>
+            <p class="mb-0"><a href="https://github.com/vuhung16au/Neural-Network-Visualisation">GitHub</a> | <a href="about.html">About</a> | <a href="howto.html">How To</a></p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
