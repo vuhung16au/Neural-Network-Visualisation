@@ -73,3 +73,24 @@ And link to this page from the `index.html`, `LeNet.html`, `AlexNet.html` pages.
 - Add a link to the `howto.html` page in the `index.html`, `LeNet.html`, `AlexNet.html` pages
 - Add a link to the `howto.html` page in the `about.html` page
 - Add a link to the `howto.html` page in the `about.html` page
+
+# Implement zoom in/out feature
+- Implement zoom in/out feature for the 3 pages:
+http://localhost:3000/index.html
+http://localhost:3000/LeNet.html
+http://localhost:3000/AlexNet.html
+
+add buttons to zoom in/out the image
+"+" button to zoom in
+"-" button to zoom out
+- Add a button to reset the zoom level
+
+# Shortcut keys
+
+- Press key "H" to show/hide the NN-Visuals setting box
+- Press key "F" to switch to FCNN style
+- Press key "L" to switch to LeNet style
+- Press key "A" to switch to AlexNet style
+
+- Press key "Z" to zoom in
+- Press key "X" to zoom out

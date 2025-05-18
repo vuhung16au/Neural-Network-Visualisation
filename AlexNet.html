@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="zoom-styles.css">
 
     <style type="text/css">
         :root {
@@ -578,6 +579,7 @@
     <script src="util.js"></script>
     <script src="exportUtils.js"></script>
     <script src="AlexNet.js"></script>
+    <script src="zoomControl.js"></script>
 
     <script type="text/javascript">
 
@@ -747,8 +749,15 @@ $(document).ready(function() {
             localStorage.setItem('nnVisualsSettingsVisible', 'true');
         }
     });
+    
+    // Initialize zoom controls
+    const zoomControl = ZoomControl();
+    zoomControl.init({
+        minZoom: 0.5,
+        maxZoom: 3.0,
+        zoomStep: 0.1
+    });
 });
-
     </script>
 
 </body>
