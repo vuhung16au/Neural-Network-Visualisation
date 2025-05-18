@@ -1,0 +1,13 @@
+# robots.txt for Neural Network Visualisation
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /about.html
+Allow: /LeNet.html
+Allow: /AlexNet.html
+
+# Disallow temporary files
+Disallow: /temp/
+
+Sitemap: https://example.com/sitemap.xml

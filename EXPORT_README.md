@@ -7,10 +7,10 @@ This feature allows you to export neural network visualizations as high-quality 
 To use the PNG export functionality, you need to install the required dependencies:
 
 ```bash
-npm install multer sharp uuid
+npm run setup
 ```
 
-These packages are used for:
+This will install all required packages including:
 - `multer`: Handling multipart/form-data for uploading SVG to the server
 - `sharp`: Converting SVG to PNG with high quality
 - `uuid`: Generating unique filenames for temporary files
@@ -57,7 +57,30 @@ If you encounter issues with PNG export:
 
 ## Integration
 
-This feature is already integrated into all three visualization styles:
+This feature is integrated into all three visualization styles with a modern UI experience:
 - FCNN style (index.html)
 - LeNet style (LeNet.html)
 - AlexNet style (AlexNet.html)
+
+## User Interface
+
+The export process includes a visually appealing loading indicator with animation:
+
+1. Click the "Export as PNG" button in any visualization
+2. A loading indicator appears with a spinner animation
+3. Once complete, the download starts automatically
+4. If there's an error, the system falls back to client-side rendering
+
+## Customizing the Export UI
+
+The export loading UI uses our application's style variables:
+
+```css
+:root {
+  --primary: #4361ee;
+  --primary-light: #4895ef;
+  --secondary: #3a0ca3;
+}
+```
+
+You can customize these variables in the HTML files to change the look of all UI components including the export dialog.

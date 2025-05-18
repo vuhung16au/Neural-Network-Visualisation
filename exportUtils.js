@@ -31,8 +31,25 @@ function ExportUtils() {
         // Show loading indicator
         const loadingIndicator = document.createElement('div');
         loadingIndicator.id = 'export-loading';
-        loadingIndicator.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255,255,255,0.8); padding: 20px; border-radius: 5px; z-index: 9999;';
-        loadingIndicator.textContent = 'Generating PNG...';
+        loadingIndicator.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255,255,255,0.95); padding: 20px; border-radius: 8px; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; flex-direction: column; align-items: center;';
+        
+        // Add spinner
+        const spinner = document.createElement('div');
+        spinner.classList.add('spinner');
+        spinner.style.cssText = 'width: 40px; height: 40px; margin-bottom: 12px; border: 4px solid rgba(0, 0, 0, 0.1); border-left-color: #4361ee; border-radius: 50%; animation: spin 1s linear infinite;';
+        
+        // Add loading text
+        const loadingText = document.createElement('div');
+        loadingText.textContent = 'Generating PNG...';
+        loadingText.style.cssText = 'font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; font-weight: 400; color: #212529;';
+        
+        // Add animation style
+        const style = document.createElement('style');
+        style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+        document.head.appendChild(style);
+        
+        loadingIndicator.appendChild(spinner);
+        loadingIndicator.appendChild(loadingText);
         document.body.appendChild(loadingIndicator);
         
         // Send request to server

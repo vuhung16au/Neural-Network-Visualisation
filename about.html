@@ -21,21 +21,37 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style type="text/css">
+        :root {
+          --primary: #4361ee;
+          --primary-light: #4895ef;
+          --secondary: #3a0ca3;
+          --light: #f8f9fa;
+          --dark: #212529;
+          --gray: #adb5bd;
+          --success: #38b000;
+          --warning: #ffba08;
+          --danger: #d00000;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            color: var(--dark);
+            background-color: var(--light);
         }
+        
         * { font-weight: 300; }
+        
         h1, h2, h3 { 
             font-weight: 300;
-            color: #2c3e50;
+            color: var(--dark);
         }
+        
         h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
+        
         h2 {
             font-size: 2rem;
             margin-top: 2rem;
@@ -43,51 +59,120 @@
             border-bottom: 1px solid #eee;
             padding-bottom: 0.5rem;
         }
+        
         .algorithm-card {
-            border: 1px solid #e9ecef;
+            border: none;
             border-radius: 8px;
             padding: 20px;
             margin-bottom: 20px;
             background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
+        
         .algorithm-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             transform: translateY(-2px);
         }
+        
         .math-block {
             overflow-x: auto;
             margin: 1rem 0;
             padding: 1rem;
             background: #f8f9fa;
-            border-left: 3px solid #007bff;
+            border-left: 3px solid var(--primary);
+            border-radius: 0 4px 4px 0;
         }
+        
         .nav-link {
             margin: 0 10px;
-            color: #007bff;
+            color: var(--primary);
             font-weight: 400;
+            transition: all 0.2s ease;
         }
+        
+        .nav-link:hover {
+            color: var(--primary-light);
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
         .footer {
             margin-top: 3rem;
             padding: 1.5rem 0;
-            border-top: 1px solid #e9ecef;
+            border-top: 1px solid #eee;
             text-align: center;
         }
+        
         .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
+            background-color: var(--primary);
+            border-color: var(--primary);
+            transition: all 0.2s ease;
         }
+        
         .btn-primary:hover {
-            background-color: #0069d9;
-            border-color: #0062cc;
+            background-color: var(--primary-light);
+            border-color: var(--primary-light);
+            transform: translateY(-1px);
         }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-outline-secondary {
+            color: var(--gray);
+            border-color: var(--gray);
+            transition: all 0.2s ease;
+        }
+        
+        .btn-outline-secondary:hover {
+            background-color: var(--gray);
+            color: white;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out;
+        }
+        
+        @keyframes octocat-wave {
+            0%, 100% { transform: rotate(0); }
+            20%, 60% { transform: rotate(-25deg); }
+            40%, 80% { transform: rotate(10deg); }
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
             }
             .container {
                 padding: 0 15px;
+            }
+            .github-corner:hover .octo-arm {
+                animation: none;
+            }
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out;
             }
         }
     </style>

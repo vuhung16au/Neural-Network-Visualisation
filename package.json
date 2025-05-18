@@ -8,7 +8,8 @@
     "start:dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "setup": "npm install && npm install multer sharp uuid",
-    "build:png": "node -e \"console.log('PNG export service is ready. Start the server with npm start.')\""
+    "build:png": "node -e \"console.log('PNG export service is ready. Start the server with npm start.')\"",
+    "check:ui": "node check-ui.js"
   },
   "repository": {
     "type": "git",
