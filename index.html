@@ -651,6 +651,42 @@ $(document).ready(function() {
         zoomStep: 0.1
     });
 });
+
+// Keyboard shortcuts for NN-Visuals
+(function() {
+    function isInputFocused() {
+        const tag = document.activeElement.tagName.toLowerCase();
+        return tag === 'input' || tag === 'textarea' || document.activeElement.isContentEditable;
+    }
+    document.addEventListener('keydown', function(e) {
+        if (isInputFocused()) return;
+        switch (e.key.toLowerCase()) {
+            case 'h': // Toggle settings panel
+                const $nnPicker = $('.nn-picker');
+                $nnPicker.toggleClass('hidden');
+                localStorage.setItem('nnVisualsSettingsVisible', !$nnPicker.hasClass('hidden'));
+                break;
+            case 'f': // Switch to FCNN style (activate tab)
+                $(".nav-tabs .nav-link").removeClass('active');
+                $(".nav-tabs .nav-link:contains('FCNN style')").addClass('active');
+                $(".tab-pane").removeClass('show active');
+                $('#FCNN').addClass('show active');
+                break;
+            case 'l': // Switch to LeNet style
+                window.location.href = 'LeNet.html';
+                break;
+            case 'a': // Switch to AlexNet style
+                window.location.href = 'AlexNet.html';
+                break;
+            case 'z': // Zoom in
+                if (typeof zoomControl !== 'undefined' && zoomControl.zoomIn) zoomControl.zoomIn();
+                break;
+            case 'x': // Zoom out
+                if (typeof zoomControl !== 'undefined' && zoomControl.zoomOut) zoomControl.zoomOut();
+                break;
+        }
+    });
+})();
     </script>
 
 </body>

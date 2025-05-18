@@ -5,6 +5,19 @@ All notable changes to Neural Network Visualisation will be documented in this f
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2025-05-18
+
+### Added
+
+- Keyboard shortcuts for quick navigation and control:
+
+  - H: Show/hide the settings panel
+  - F: Switch to FCNN style (index.html)
+  - L: Switch to LeNet style
+  - A: Switch to AlexNet style
+  - Z: Zoom in
+  - X: Zoom out
+
 ## [1.0.0] - 2025-05-18
 
 ### Added
@@ -47,6 +60,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Cubic bezier rendering to FCNN (#57)
 
+[1.0.1]: https://github.com/vuhung16au/Neural-Network-Visualisation/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/vuhung16au/Neural-Network-Visualisation/compare/v0.9.0...v1.0.0
 [0.9.0]: https://github.com/vuhung16au/Neural-Network-Visualisation/compare/v0.8.5...v0.9.0
 [0.8.5]: https://github.com/vuhung16au/Neural-Network-Visualisation/compare/v0.8.4...v0.8.5
