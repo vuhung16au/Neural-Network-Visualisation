@@ -144,3 +144,33 @@ A prominent "Reset to Default" button is included.
 Download and help actions are in a fixed top bar.
 The stats/info panel is now above the visualization.
 The visualization area features a subtle grid background.
+
+# Download buttons
+
+In the pages 
+
+http://localhost:3000/index.html
+http://localhost:3000/LeNet.html
+http://localhost:3000/AlexNet.html
+
+make the texts links 
+- Download SVG  
+- Download PNG
+become buttons (SVG button, PNG button)
+
+You can find and decide the buttons
+
+# New index.html
+
+Move current `index.html` to `FCNN.html`
+
+Create a new `index.html` file with the following content:
+- 3 big boxes link to the 3 pages:
+    - FCNN.html
+    - LeNet.html
+    - AlexNet.html
+
+each box has a different color
+in each box, describe the algorithm in 1-2 lines
+
+Make sure the boxes are responsive
