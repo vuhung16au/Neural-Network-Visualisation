@@ -85,7 +85,7 @@
                     <div class="card-header">
                         <a class="pull-right" data-toggle="collapse" href="#collapsable" role="button"><i class="fa"></i></a>
                         <h1>NN-SVG</h1>
-                        <p>Publication-ready NN-architecture schematics. <a id="download" class="disabled" href="#">Download SVG</a></p>
+                        <p>Publication-ready NN-architecture schematics. <a id="download" class="disabled" href="#">Download SVG</a> | <a id="downloadPNG" class="disabled" href="#">Download PNG</a></p>
 
                         <nav>
                             <div class="nav nav-tabs card-header-tabs" role="tablist">
@@ -456,6 +456,47 @@ $("#download").on("click", function() {
 
     $(this).attr("href", 'data:application/octet-stream;base64,' + btoa(unescape(encodeURIComponent($('<div>').append($( $("#graph-container").html()).attr("xmlns", "http://www.w3.org/2000/svg") ).html()))))
            .attr("download", "nn.svg")
+});
+
+$("#downloadPNG").on("click", function() {
+    // Get the SVG element
+    const svgElement = document.querySelector("#graph-container svg");
+    if (!svgElement) return;
+    
+    // Make sure the SVG has xmlns attribute
+    svgElement.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    const svgData = new XMLSerializer().serializeToString(svgElement);
+    
+    // Create a canvas element
+    const canvas = document.createElement("canvas");
+    const svgSize = svgElement.getBoundingClientRect();
+    canvas.width = svgSize.width;
+    canvas.height = svgSize.height;
+    
+    // Create an image from the SVG
+    const img = new Image();
+    const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+    const url = URL.createObjectURL(svgBlob);
+    
+    img.onload = function() {
+        // Draw the image on the canvas
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0);
+        URL.revokeObjectURL(url);
+        
+        // Convert the canvas to a data URL and trigger a download
+        const pngUrl = canvas.toDataURL('image/png');
+        const downloadLink = document.createElement('a');
+        downloadLink.href = pngUrl;
+        downloadLink.download = 'nn.png';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    };
+    
+    img.src = url;
 });
 
 
