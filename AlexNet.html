@@ -70,7 +70,7 @@
         }
     </style>
 
-    <title>NN SVG</title>
+    <title>NN-Visuals</title>
 
 </head>
 <body>
@@ -84,7 +84,7 @@
                 <div class="card">
                     <div class="card-header">
                         <a class="pull-right" data-toggle="collapse" href="#collapsable" role="button"><i class="fa"></i></a>
-                        <h1>NN-SVG</h1>
+                        <h1>NN-Visuals</h1>
                         <p>Publication-ready NN-architecture schematics. <a id="download" class="disabled" href="#">Download SVG</a> | <a id="downloadPNG" class="disabled" href="#">Download PNG</a></p>
 
                         <nav>
@@ -327,11 +327,13 @@
     <!-- <script src="https://threejs.org/examples/js/renderers/CSS3DRenderer.js"></script> -->
 
     <script src="util.js"></script>
+    <script src="exportUtils.js"></script>
     <script src="AlexNet.js"></script>
 
     <script type="text/javascript">
 
 alexnet = AlexNet();
+var rendererType = 'webgl'; // Default renderer type
 
 function restart() {
 
@@ -349,6 +351,12 @@ function restart() {
 
 restart();
 
+// Enable PNG download if using SVG renderer
+if (rendererType == 'svg') {
+    $("#download").removeClass('disabled');
+    $("#downloadPNG").removeClass('disabled');
+}
+
 // /////////////////////////////////////////////////////////////////////////////
 //                 ///////    Select Styling    ///////
 // /////////////////////////////////////////////////////////////////////////////
@@ -358,9 +366,11 @@ $('#rendererType input:radio').change(function() {
     rendererType = this.value;
     if (rendererType == 'svg') {
         $("#download").removeClass('disabled');
+        $("#downloadPNG").removeClass('disabled');
     }
     else if (rendererType == 'webgl') {
         $("#download").addClass('disabled');
+        $("#downloadPNG").addClass('disabled');
     }
     $(this).blur();
     alexnet.restartRenderer({'rendererType_':rendererType});
@@ -458,45 +468,11 @@ $("#download").on("click", function() {
            .attr("download", "nn.svg")
 });
 
-$("#downloadPNG").on("click", function() {
-    // Get the SVG element
-    const svgElement = document.querySelector("#graph-container svg");
-    if (!svgElement) return;
-    
-    // Make sure the SVG has xmlns attribute
-    svgElement.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    const svgData = new XMLSerializer().serializeToString(svgElement);
-    
-    // Create a canvas element
-    const canvas = document.createElement("canvas");
-    const svgSize = svgElement.getBoundingClientRect();
-    canvas.width = svgSize.width;
-    canvas.height = svgSize.height;
-    
-    // Create an image from the SVG
-    const img = new Image();
-    const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
-    const url = URL.createObjectURL(svgBlob);
-    
-    img.onload = function() {
-        // Draw the image on the canvas
-        const ctx = canvas.getContext('2d');
-        ctx.fillStyle = 'white';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0);
-        URL.revokeObjectURL(url);
-        
-        // Convert the canvas to a data URL and trigger a download
-        const pngUrl = canvas.toDataURL('image/png');
-        const downloadLink = document.createElement('a');
-        downloadLink.href = pngUrl;
-        downloadLink.download = 'nn.png';
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
-    };
-    
-    img.src = url;
+$("#downloadPNG").on("click", function(e) {
+    e.preventDefault();
+    // Use the ExportUtils to handle PNG export
+    const exportUtils = ExportUtils();
+    exportUtils.exportToPNG('graph-container', 'alexnet.png');
 });
 
 
