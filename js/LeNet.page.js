@@ -160,8 +160,8 @@ $(document).ready(function() {
                 $nnPicker.toggleClass('hidden');
                 localStorage.setItem('nnVisualsSettingsVisible', !$nnPicker.hasClass('hidden'));
                 break;
-            case 'f': // Switch to FCNN style (go to index.html)
-                window.location.href = 'index.html';
+            case 'f': // Switch to FCNN style (go to FCNN.html)
+                window.location.href = 'FCNN.html';
                 break;
             case 'l': // Switch to LeNet style
                 window.location.href = 'LeNet.html';
