@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const port = process.env.PORT || 3000;
-const exportService = require('./exportService');
+const exportService = require('./js/exportService');
 
 // Body parser middleware
 app.use(express.json());
