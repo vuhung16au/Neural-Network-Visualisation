@@ -184,6 +184,51 @@
                             <li><kbd>Z</kbd>: Zoom in</li>
                             <li><kbd>X</kbd>: Zoom out</li>
                         </ul>
+
+                        <h2 id="creating-networks">Creating Neural Networks</h2>
+                        <p>NN-Visuals allows you to create and visualize different types of neural network architectures. Here's how to create some common network types:</p>
+                        
+                        <h4 id="create-slp">How to Create a Single Layer Perceptron (SLP)</h4>
+                        <p>A Single Layer Perceptron is the simplest form of neural network with only input and output layers:</p>
+                        <ol>
+                            <li>Navigate to the FCNN page by clicking on "FCNN" in the navigation bar</li>
+                            <li>Open the settings panel by clicking the gear icon <i class="fa fa-cog"></i></li>
+                            <li>Under "Network Structure" section, set the following parameters:
+                                <ul>
+                                    <li>Set "Number of Hidden Layers" to 0</li>
+                                    <li>Configure the "Input Layer Size" based on your data features (e.g., 4 for four input features)</li>
+                                    <li>Set the "Output Layer Size" based on your number of classes (e.g., 3 for a three-class classification)</li>
+                                </ul>
+                            </li>
+                            <li>Click "Apply Changes" to generate the SLP visualization</li>
+                        </ol>
+                        
+                        <div class="tip">
+                            <strong>Note:</strong> In a true SLP, each output neuron is connected directly to all input neurons, but there are no hidden layers in between.
+                        </div>
+
+                        <h4 id="create-mlp">How to Create a Multi-Layer Perceptron (MLP)</h4>
+                        <p>A Multi-Layer Perceptron contains one or more hidden layers between the input and output layers:</p>
+                        <ol>
+                            <li>Navigate to the FCNN page by clicking on "FCNN" in the navigation bar</li>
+                            <li>Open the settings panel by clicking the gear icon <i class="fa fa-cog"></i></li>
+                            <li>Under "Network Structure" section, configure the following:
+                                <ul>
+                                    <li>Set "Number of Hidden Layers" to 1 or more (e.g., 2 for a two-hidden-layer MLP)</li>
+                                    <li>For each hidden layer, specify the number of neurons (e.g., 10 neurons in the first hidden layer, 5 in the second)</li>
+                                    <li>Configure the "Input Layer Size" based on your data features</li>
+                                    <li>Set the "Output Layer Size" based on your output requirements</li>
+                                </ul>
+                            </li>
+                            <li>Under "Activation Functions" (if available), select the activation functions for hidden layers (e.g., ReLU, Sigmoid) and output layer (e.g., Softmax for classification)</li>
+                            <li>Click "Apply Changes" to generate the MLP visualization</li>
+                        </ol>
+                        
+                        <div class="tip">
+                            <strong>Tip:</strong> For more complex tasks, consider using more hidden layers with varying numbers of neurons. A common approach is to start with larger hidden layers near the input and progressively reduce the size as you approach the output layer.
+                        </div>
+                        
+                        <p>After creating your SLP or MLP visualization, you can further customize its appearance using the style options described in the "Working with Styles" section above.</p>
                     </div>
                 </div>
             </div>
