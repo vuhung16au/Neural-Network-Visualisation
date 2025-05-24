@@ -62,6 +62,8 @@
         .btn-primary { background-color: var(--primary); border-color: var(--primary); }
         .btn-secondary { background-color: var(--gray); border-color: var(--gray); }
         .btn-primary:hover { background-color: var(--primary-light); border-color: var(--primary-light); }
+        .btn-info { background-color: #17a2b8; border-color: #17a2b8; color: white; margin-left: 5px; }
+        .btn-info:hover { background-color: #138496; border-color: #117a8b; color: white; }
         #download, #downloadPNG { color: var(--primary); text-decoration: none; font-weight: 400; transition: all 0.2s ease; }
         #download:hover, #downloadPNG:hover { color: var(--primary-light); text-decoration: underline; }
         hr { margin-top: 1.5rem; margin-bottom: 1.5rem; background-color: #eee; }
@@ -305,7 +307,10 @@
                             </div>
 
                             <hr>
-                            <button type="button" class="btn btn-sm btn-secondary" id="newRandomWeights">New Random Weights</button>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-secondary" id="newRandomWeights">New Random Weights</button>
+                                <button type="button" class="btn btn-sm btn-info" id="slpButton">SLP</button>
+                            </div>
 
                         </div>
                     </div>

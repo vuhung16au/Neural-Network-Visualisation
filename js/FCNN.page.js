@@ -72,6 +72,43 @@ $(document).on('click', '#newRandomWeights', function() {
     restart();
 });
 
+// Handler for SLP button - configure a Single Layer Perceptron
+$(document).on('click', '#slpButton', function() {
+    // Clear existing architecture
+    $('#architecture').empty();
+    
+    // Create the SLP architecture: 3 input nodes, 1 hidden node, 1 output node
+    const layers = [
+        { nodes: 3, spacing: 20 },
+        { nodes: 1, spacing: 20 },
+        { nodes: 1, spacing: 20 }
+    ];
+    
+    // Add each layer row to the architecture
+    layers.forEach((layer, index) => {
+        const isLast = index === layers.length - 1;
+        const buttonClass = isLast ? 'btn-primary btn-add' : 'btn-secondary btn-remove';
+        const buttonIcon = isLast ? 'plus' : 'minus';
+        
+        const entryRow = `
+            <div class="row entry">
+                <div class="input-group mb-2 mr-sm-2 col-4">
+                    <button class="btn ${buttonClass} input-group-prepend"><span class="fa fa-${buttonIcon}"></span></button>
+                    <input type="number" class="form-control" name="numberOfNodes" step="1" value="${layer.nodes}" />
+                </div>
+                <input type="range" class="form-control col-4" name="betweenNodesInLayer" min="0" max="100" step="1" value="${layer.spacing}" class="form-range">
+            </div>
+        `;
+        
+        $('#architecture').append(entryRow);
+    });
+    
+    // Generate new random weights and update the visualization
+    link = fcnn.link.data([]);
+    fcnn.link.exit().remove();
+    restart();
+});
+
 d3.select("#download").on("click", function() {
     // ga('send', 'event', 'downloadSVG', 'FCNN');
     d3.select(this)
