@@ -74,6 +74,34 @@
 
                         <h2>Available Neural Network Architectures</h2>
                         <div class="row">
+                            <!-- SLP Card -->
+                            <div class="col-md-6">
+                                <div class="algorithm-card">
+                                    <h3>Single Layer Perceptron (SLP)</h3>
+                                    <p>The simplest form of neural network with only input and output layers, a special case of FCNN.</p>
+                                    <div class="math-block">
+                                        <p>Mathematical representation:</p>
+                                        <p>\[ y = \sigma\left(\sum_{i=1}^{n} w_i x_i + b\right) \]</p>
+                                        <p>Where:</p>
+                                        <p>\(\sigma\) is typically a step function, \(w_i\) are weights, \(x_i\) are inputs, and \(b\) is bias</p>
+                                        <p>Why it's a special case of FCNN: It's the simplest FCNN with no hidden layers, only capable of learning linearly separable patterns.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- MLP Card -->
+                            <div class="col-md-6">
+                                <div class="algorithm-card">
+                                    <h3>Multi-Layer Perceptron (MLP)</h3>
+                                    <p>A feed-forward neural network with one or more hidden layers between input and output layers.</p>
+                                    <div class="math-block">
+                                        <p>For each neuron in hidden layer \(l\):</p>
+                                        <p>\[ h^{(l)}_j = \sigma\left(\sum_{i=1}^{n^{(l-1)}} w^{(l)}_{ji} h^{(l-1)}_i + b^{(l)}_j\right) \]</p>
+                                        <p>Why it's a special case of FCNN: It's a specific type of FCNN with a strictly feed-forward architecture and fully connected layers, but without specialized structures like convolutional or recurrent connections.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <!-- CNN Card -->
                             <div class="col-md-6">
                                 <div class="algorithm-card">
