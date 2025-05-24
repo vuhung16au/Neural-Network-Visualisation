@@ -30,13 +30,95 @@ I designed this tool to save valuable time for machine learning researchers whil
 
 ## How to Run
 
-To run the application in development mode:
+### Prerequisites
 
+Before running the application, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v14.0.0 or higher)
+- [npm](https://www.npmjs.com/) (usually comes with Node.js)
+
+### Setup and Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/vuhung16au/Neural-Network-Visualisation.git
+   cd Neural-Network-Visualisation
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+   Or use the setup script which installs all dependencies including image processing libraries:
+
+   ```bash
+   npm run setup
+   ```
+
+### Running the Server
+
+To run the application in development mode with hot-reloading:
 ```bash
 npm run start:dev
 ```
 
-This will start the server with hot-reloading enabled.
+To run in production mode:
+```bash
+npm start
+```
+
+The server will start running on [http://localhost:3000](http://localhost:3000) by default. You will see a detailed console output with available pages and endpoints.
+
+### Available Pages
+
+- Main page: [http://localhost:3000/](http://localhost:3000/)
+- AlexNet visualization: [http://localhost:3000/AlexNet.html](http://localhost:3000/AlexNet.html)
+- LeNet visualization: [http://localhost:3000/LeNet.html](http://localhost:3000/LeNet.html)
+- Fully Connected Neural Network: [http://localhost:3000/FCNN.html](http://localhost:3000/FCNN.html)
+- About page: [http://localhost:3000/about.html](http://localhost:3000/about.html)
+
+### Deploying to Vercel
+
+Vercel is a cloud platform that enables developers to host websites and web services. Follow these steps to deploy NN-Visuals to Vercel:
+
+1. Install the Vercel CLI:
+
+   ```bash
+   npm install -g vercel
+   ```
+
+2. Login to Vercel:
+
+   ```bash
+   vercel login
+   ```
+
+3. Deploy from your local project directory:
+
+   ```bash
+   vercel
+   ```
+
+4. For production deployment:
+
+   ```bash
+   vercel --prod
+   ```
+
+Alternatively, you can deploy directly from GitHub:
+
+1. Push your code to a GitHub repository
+2. Visit [Vercel Dashboard](https://vercel.com/dashboard)
+3. Click "New Project" and select your repository
+4. Configure the following settings:
+   - Build Command: `npm install`
+   - Output Directory: `.` (root directory)
+   - Install Command: `npm install`
+5. Click "Deploy"
+
+Vercel will automatically detect and configure the project as a Node.js application. Your application will be accessible via a unique domain provided by Vercel, with an option to add a custom domain later.
 
 ## Recent Updates
 
